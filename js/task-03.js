@@ -12,3 +12,17 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+//== создать img, вложенных в li
+//==использовать метод insertAdjacentHTML()
+
+const galleryRef = images.map((image) => {
+  return `<li><img src="${image.url}" alt="${image.alt}" width = 200 height = 150></li>`
+});
+
+const galleryRefString = galleryRef.join("");
+
+const galleryList = document.querySelector(".gallery");
+galleryList.insertAdjacentHTML("afterbegin", galleryRef);
+galleryList.setAttribute("style", "list-style-type:none; display: flex;");
