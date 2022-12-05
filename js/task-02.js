@@ -7,13 +7,13 @@ const ingredients = [
   'Condiments',
 ];
 const ulList = document.getElementById('ingredients')
-console.log(ulList)
+const ingredientsList = [];
 
-const addName = ingredients.forEach(ingredient => {
-  let items = document.createElement('li');
-  items.textContent = ingredient;
-  items.classList.add('item');
-  ulList.append(items);
+ingredients.map(items => {
+  const item = document.createElement('li');
+  item.textContent = items;
+  item.classList.add('item');
+  ingredientsList.push(item);
 });
 
-console.log(addName)
+ulList.append(...ingredientsList);
